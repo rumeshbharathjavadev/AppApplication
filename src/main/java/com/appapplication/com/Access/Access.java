@@ -1,6 +1,6 @@
 package com.appapplication.com.Access;
 
-import com.appapplication.com.Details.Details;
+import com.appapplication.com.Application.Application;
 import jakarta.persistence.*;
 
 @Entity
@@ -17,7 +17,7 @@ public class Access {
 
 
     @ManyToOne
-    private Details application;
+    private Application application;
 
     public Access() {
     }
@@ -70,11 +70,11 @@ public class Access {
         this.notification = notification;
     }
 
-    public Details getApplication() {
+    public Application getApplication() {
         return application;
     }
 
-    public void setApplication(Details application) {
+    public void setApplication(Application application) {
         this.application = application;
     }
 }

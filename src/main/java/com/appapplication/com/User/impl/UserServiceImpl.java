@@ -1,4 +1,8 @@
 package com.appapplication.com.User.impl;
 
-public class UserServiceImpl {
+import com.appapplication.com.User.UserService;
+import org.springframework.stereotype.Service;
+
+@Service
+public class UserServiceImpl implements UserService {
 }

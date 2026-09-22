@@ -13,8 +13,8 @@ public class Type {
     private String type;
 
 
-    @ManyToOne
-    private User user;
+  /*  @ManyToOne
+    private User user;*/
 
     public Type() {
     }
@@ -35,11 +35,5 @@ public class Type {
         this.type = type;
     }
 
-    public User getUser() {
-        return user;
-    }
 
-    public void setUser(User user) {
-        this.user = user;
-    }
 }

@@ -2,7 +2,7 @@ package com.appapplication.com.User;
 
 import com.appapplication.com.Category.Category;
 import com.appapplication.com.Type.Type;
-import com.appapplication.com.Details.Details;
+import com.appapplication.com.Application.Application;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -17,14 +17,16 @@ public class User {
     private String gender;
     private String age;
 
-    @OneToMany(mappedBy = "user")
+
+    @ManyToOne
+    private Application application;
+
+   /* @OneToMany(mappedBy = "user")
     private List<Type> acctountype;
 
     @OneToMany(mappedBy = "user")
-    private List<Category> accountcategory;
+    private List<Category> accountcategory;*/
 
-    @ManyToOne
-    private Details application;
 
     public User() {
     }
@@ -61,27 +63,12 @@ public class User {
         this.age = age;
     }
 
-    public List<Type> getAcctountype() {
-        return acctountype;
-    }
 
-    public void setAcctountype(List<Type> acctountype) {
-        this.acctountype = acctountype;
-    }
-
-    public List<Category> getAccountcategory() {
-        return accountcategory;
-    }
-
-    public void setAccountcategory(List<Category> accountcategory) {
-        this.accountcategory = accountcategory;
-    }
-
-    public Details getApplication() {
+    public Application getApplication() {
         return application;
     }
 
-    public void setApplication(Details application) {
+    public void setApplication(Application application) {
         this.application = application;
     }
 }

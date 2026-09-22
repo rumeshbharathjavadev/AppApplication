@@ -12,8 +12,10 @@ public class Category {
     private Long id;
     private String category;
 
+/*
     @ManyToOne
     private User user;
+*/
 
     public Long getId() {
         return id;
@@ -35,11 +37,5 @@ public class Category {
         this.category = category;
     }
 
-    public User getUser() {
-        return user;
-    }
 
-    public void setUser(User user) {
-        this.user = user;
-    }
 }

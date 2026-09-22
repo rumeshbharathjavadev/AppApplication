@@ -1,8 +1,8 @@
-package com.appapplication.com.Category;
+package com.appapplication.com.Application;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface CategoryRepository extends JpaRepository<Category,Long> {
+public interface ApplicationRepository extends JpaRepository<Application,Long> {
 }

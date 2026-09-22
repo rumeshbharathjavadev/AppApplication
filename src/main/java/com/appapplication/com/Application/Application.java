@@ -1,4 +1,4 @@
-package com.appapplication.com.Details;
+package com.appapplication.com.Application;
 
 import com.appapplication.com.Access.Access;
 import com.appapplication.com.Review.Review;
@@ -9,14 +9,14 @@ import java.util.List;
 
 
 @Entity
-public class Details {
+public class Application {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String appname;
     private Integer appversion;
-    private Integer appstoage;
+    private String appstoage;
     private Float appbatterycapacity;
 
 
@@ -29,16 +29,7 @@ public class Details {
     @OneToMany(mappedBy = "application")
     private List<Review> review;
 
-
-    public Details() {
-    }
-
-    public Integer getAppstoage() {
-        return appstoage;
-    }
-
-    public void setAppstoage(Integer appstoage) {
-        this.appstoage = appstoage;
+    public Application() {
     }
 
     public Long getId() {
@@ -63,6 +54,14 @@ public class Details {
 
     public void setAppversion(Integer appversion) {
         this.appversion = appversion;
+    }
+
+    public String getAppstoage() {
+        return appstoage;
+    }
+
+    public void setAppstoage(String appstoage) {
+        this.appstoage = appstoage;
     }
 
     public Float getAppbatterycapacity() {

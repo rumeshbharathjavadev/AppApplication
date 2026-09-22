@@ -1,0 +1,38 @@
+
+App
+│
+├── id
+├── appname
+├── appversion
+├── appstorage
+├── appbatterycapacity
+│
+├── User
+│   ├── id
+│   ├── username
+│   ├── gender
+│   ├── age
+│   │
+│   ├── AccountType
+│   │   ├── id
+│   │   └── type
+│   │
+│   └── AccountCategory
+│       ├── id
+│       └── category
+│
+├── Access
+│   ├── id
+│   ├── microphone
+│   ├── storage
+│   ├── camera
+│   ├── message
+│   └── notification
+│
+└── Review
+    ├── id
+    ├── like
+    ├── comment
+    ├── share
+    ├── repost
+    └── rating

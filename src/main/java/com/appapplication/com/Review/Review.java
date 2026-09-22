@@ -1,9 +1,7 @@
 package com.appapplication.com.Review;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.appapplication.com.Application.Application;
+import jakarta.persistence.*;
 
 @Entity
 public class Review {
@@ -11,11 +9,15 @@ public class Review {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String like;
+    private Long like;
     private String comment;
-    private String share;
+    private Long share;
     private String repost;
-    private Integer rating;
+    private Long rating;
+
+    @ManyToOne
+    private Application application;
+
 
     public Review() {
     }
@@ -28,11 +30,11 @@ public class Review {
         this.id = id;
     }
 
-    public String getLike() {
+    public Long getLike() {
         return like;
     }
 
-    public void setLike(String like) {
+    public void setLike(Long like) {
         this.like = like;
     }
 
@@ -44,11 +46,11 @@ public class Review {
         this.comment = comment;
     }
 
-    public String getShare() {
+    public Long getShare() {
         return share;
     }
 
-    public void setShare(String share) {
+    public void setShare(Long share) {
         this.share = share;
     }
 
@@ -61,10 +63,19 @@ public class Review {
     }
 
     public Integer getRating() {
-        return rating;
+        return Math.toIntExact(rating);
     }
 
-    public void setRating(Integer rating) {
+    public void setRating(Long rating) {
         this.rating = rating;
     }
+
+    public Application getApplication() {
+        return application;
+    }
+
+    public void setApplication(Application application) {
+        this.application = application;
+    }
+
 }

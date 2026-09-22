@@ -1,4 +1,9 @@
 package com.appapplication.com.Type.impl;
 
-public class TypeServiceImpl {
+import com.appapplication.com.Type.TypeRepository;
+import com.appapplication.com.Type.TypeService;
+import org.springframework.stereotype.Service;
+
+@Service
+public class TypeServiceImpl extends TypeService {
 }
