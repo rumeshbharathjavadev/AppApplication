@@ -1,6 +1,6 @@
 package com.appapplication.com.Type;
 
-import com.appapplication.com.User.User;
+import com.appapplication.com.User.UserApplication;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
@@ -13,8 +13,8 @@ public class Type {
     private String type;
 
 
-  /*  @ManyToOne
-    private User user;*/
+    @ManyToOne
+    private UserApplication user;
 
     public Type() {
     }
@@ -35,5 +35,11 @@ public class Type {
         this.type = type;
     }
 
+    public UserApplication getUser() {
+        return user;
+    }
 
+    public void setUser(UserApplication user) {
+        this.user = user;
+    }
 }

@@ -1,6 +1,6 @@
 package com.appapplication.com.Category;
 
-import com.appapplication.com.User.User;
+import com.appapplication.com.User.UserApplication;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
@@ -12,10 +12,8 @@ public class Category {
     private Long id;
     private String category;
 
-/*
     @ManyToOne
-    private User user;
-*/
+    private UserApplication user;
 
     public Long getId() {
         return id;
@@ -37,5 +35,11 @@ public class Category {
         this.category = category;
     }
 
+    public UserApplication getUser() {
+        return user;
+    }
 
+    public void setUser(UserApplication user) {
+        this.user = user;
+    }
 }

@@ -2,7 +2,7 @@ package com.appapplication.com.Application;
 
 import com.appapplication.com.Access.Access;
 import com.appapplication.com.Review.Review;
-import com.appapplication.com.User.User;
+import com.appapplication.com.User.UserApplication;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -21,7 +21,7 @@ public class Application {
 
 
     @OneToMany(mappedBy = "application")
-    private List<User> user;
+    private List<UserApplication> user;
 
     @OneToMany(mappedBy = "application")
     private List<Access> access;
@@ -33,7 +33,7 @@ public class Application {
     }
 
     public Long getId() {
-        return id;
+        return this.id;
     }
 
     public void setId(Long id) {
@@ -72,11 +72,11 @@ public class Application {
         this.appbatterycapacity = appbatterycapacity;
     }
 
-    public List<User> getUser() {
+    public List<UserApplication> getUser() {
         return user;
     }
 
-    public void setUser(List<User> user) {
+    public void setUser(List<UserApplication> user) {
         this.user = user;
     }
 

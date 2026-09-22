@@ -9,7 +9,7 @@ public class Review {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long like;
+    private Long postlike;
     private String comment;
     private Long share;
     private String repost;
@@ -31,11 +31,11 @@ public class Review {
     }
 
     public Long getLike() {
-        return like;
+        return postlike;
     }
 
     public void setLike(Long like) {
-        this.like = like;
+        this.postlike = like;
     }
 
     public String getComment() {

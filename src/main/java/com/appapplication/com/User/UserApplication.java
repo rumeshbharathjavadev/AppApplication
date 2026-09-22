@@ -8,7 +8,7 @@ import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
-public class User {
+public class UserApplication {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,14 +21,14 @@ public class User {
     @ManyToOne
     private Application application;
 
-   /* @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user")
     private List<Type> acctountype;
 
     @OneToMany(mappedBy = "user")
-    private List<Category> accountcategory;*/
+    private List<Category> accountcategory;
 
 
-    public User() {
+    public UserApplication() {
     }
 
     public Long getId() {
@@ -63,6 +63,21 @@ public class User {
         this.age = age;
     }
 
+    public List<Type> getAcctountype() {
+        return acctountype;
+    }
+
+    public void setAcctountype(List<Type> acctountype) {
+        this.acctountype = acctountype;
+    }
+
+    public List<Category> getAccountcategory() {
+        return accountcategory;
+    }
+
+    public void setAccountcategory(List<Category> accountcategory) {
+        this.accountcategory = accountcategory;
+    }
 
     public Application getApplication() {
         return application;
