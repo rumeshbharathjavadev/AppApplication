@@ -10,4 +10,6 @@ public interface UserService {
     boolean addUser(Long applicationId,UserApplication userApplication);
 
     List<UserApplication> getAllUser();
+
+    UserApplication getUserId(Long applicationId,Long userApplicationId);
 }

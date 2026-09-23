@@ -41,4 +41,12 @@ public class UserController {
        List<UserApplication> userApplications= userService.getAllUser();
        return new ResponseEntity<>(userApplications, HttpStatus.OK);
     }
+
+    @GetMapping("/getUserId/{userApplicationId}")
+    public UserApplication getUserId(@PathVariable Long applicationId,@PathVariable Long userApplicationId){
+
+
+         UserApplication userApplications= userService.getUserId(applicationId,userApplicationId);
+        return userApplications;
+    }
 }

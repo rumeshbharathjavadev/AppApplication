@@ -38,4 +38,18 @@ public class UserServiceImpl implements UserService {
     public List<UserApplication> getAllUser() {
         return userRepository.findAll();
     }
+
+    @Override
+    public UserApplication getUserId(Long applicationId, Long userApplicationId) {
+        System.out.println(" applicationId "+applicationId);
+        System.out.println("ID "+userApplicationId);
+        List<UserApplication> userApplications =userRepository.findByApplicationId(applicationId);
+        if (userApplications.isEmpty()){
+            System.out.println("yese");
+        }
+
+        userApplications.stream().forEach(application->{System.out.println(application);});
+        return userApplications.stream().filter(userApplication -> userApplication.getId().equals(userApplicationId)).findFirst().orElse(null);
+
+    }
 }
