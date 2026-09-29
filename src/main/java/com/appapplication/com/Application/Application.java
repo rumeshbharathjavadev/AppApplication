@@ -2,7 +2,8 @@ package com.appapplication.com.Application;
 
 import com.appapplication.com.Access.Access;
 import com.appapplication.com.Review.Review;
-import com.appapplication.com.User.UserApplication;
+import com.appapplication.com.UserApplication.UserApplication;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -20,8 +21,12 @@ public class Application {
     private Float appbatterycapacity;
 
 
+
+
+@JsonIgnore
     @OneToMany(mappedBy = "application")
-    private List<UserApplication> user;
+    private List<UserApplication> userApplications;
+
 
     @OneToMany(mappedBy = "application")
     private List<Access> access;
@@ -69,30 +74,36 @@ public class Application {
     }
 
     public void setAppbatterycapacity(Float appbatterycapacity) {
+
         this.appbatterycapacity = appbatterycapacity;
     }
 
-    public List<UserApplication> getUser() {
-        return user;
+    public List<UserApplication> getUserApplications() {
+        return userApplications;
     }
 
-    public void setUser(List<UserApplication> user) {
-        this.user = user;
+    public void setUserApplications(List<UserApplication> userApplications) {
+        this.userApplications = userApplications;
     }
+
 
     public List<Access> getAccess() {
+
         return access;
     }
 
-    public void setAccess(List<Access> access) {
+    public void setAccess(List<Access> access)
+    {
         this.access = access;
     }
 
-    public List<Review> getReview() {
+    public List<Review> getReview()
+    {
         return review;
     }
 
     public void setReview(List<Review> review) {
         this.review = review;
     }
+
 }

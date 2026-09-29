@@ -1,4 +1,7 @@
 package com.appapplication.com.Type;
 
-public class TypeService {
+public interface TypeService {
+
+
+    boolean addType(Long applicationId,Long userApplicationId,Type type);
 }

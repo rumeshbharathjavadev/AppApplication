@@ -1,8 +1,9 @@
-package com.appapplication.com.User;
+package com.appapplication.com.UserApplication;
 
 import com.appapplication.com.Category.Category;
 import com.appapplication.com.Type.Type;
 import com.appapplication.com.Application.Application;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -17,14 +18,14 @@ public class UserApplication {
     private String gender;
     private String age;
 
-
+    @JsonIgnore
     @ManyToOne
     private Application application;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "userApplication")
     private List<Type> acctountype;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "userApplication")
     private List<Category> accountcategory;
 
 

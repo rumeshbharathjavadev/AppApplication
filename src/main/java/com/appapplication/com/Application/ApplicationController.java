@@ -53,9 +53,9 @@ public class ApplicationController {
     public ResponseEntity<String> updateApplication(@PathVariable Long id, @RequestBody Application application){
         boolean isUpdatedApplication= applicationSevice.updateApplication(id, application);
         if (isUpdatedApplication){
-            return new ResponseEntity<>("App Application Updated successfully",HttpStatus.OK);
+            return new ResponseEntity<>("Application Updated successfully",HttpStatus.OK);
         }else{
-            return new ResponseEntity<>("App Application Not Update",HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>("Application Not Update",HttpStatus.NOT_FOUND);
         }
     }
 
@@ -63,9 +63,9 @@ public class ApplicationController {
     public ResponseEntity<String> deleteApplication(@PathVariable Long id){
         boolean isDeletedApplication= applicationSevice.deleteApplication(id);
         if (isDeletedApplication){
-            return new ResponseEntity<>("App Application Deleted successfully",HttpStatus.OK);
+            return new ResponseEntity<>("Application Deleted successfully",HttpStatus.OK);
         }else{
-            return new ResponseEntity<>("App Application Not Deleted",HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>("Application Not Deleted",HttpStatus.NOT_FOUND);
         }
     }
 }

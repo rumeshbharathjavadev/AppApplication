@@ -41,7 +41,7 @@ public class ApplicationServiceImpl implements ApplicationSevice {
             updateApplication.setAppversion(application.getAppversion());
             updateApplication.setAppstoage(application.getAppstoage());
             updateApplication.setAppbatterycapacity(application.getAppbatterycapacity());
-            updateApplication.setUser(application.getUser());
+            updateApplication.setUserApplications(application.getUserApplications());
             updateApplication.setAccess(application.getAccess());
             updateApplication.setReview(application.getReview());
             applicationRepository.save(updateApplication);
