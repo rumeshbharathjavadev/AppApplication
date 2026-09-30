@@ -8,6 +8,9 @@ import com.appapplication.com.UserApplication.UserApplication;
 import com.appapplication.com.UserApplication.UserApplicationService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Optional;
+
 @Service
 public class TypeServiceImpl implements TypeService {
 
@@ -23,18 +26,32 @@ private TypeRepository typeRepository;
 
     @Override
     public boolean addType(Long applicationId, Long userApplicationId, Type type) {
-
-
         UserApplication userApplication=userApplicationService.getUserId(applicationId,userApplicationId);
-
-
        if (userApplication!=null) {
-          // type.setUserApplication(userApplication);
+           type.setUserApplication(userApplication);
            typeRepository.save(type);
            return true;
        }else{
-
            return false;
        }
     }
+
+    @Override
+    public List<Type> getAllType() {
+        return typeRepository.findAll();
+    }
+
+    @Override
+    public List<Type> getType(Long applicationId, Long userApplicationId, Long usertypeId) {
+        UserApplication userApplication=userApplicationService.getUserId(applicationId,userApplicationId);
+        if (userApplication!=null) {
+            Optional<Type> alltype=typeRepository.findById(usertypeId);
+        }
+
+        return null;
+    }
+
+
+
+
 }

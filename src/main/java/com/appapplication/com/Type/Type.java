@@ -1,20 +1,21 @@
 package com.appapplication.com.Type;
 
+import com.appapplication.com.Application.Application;
 import com.appapplication.com.UserApplication.UserApplication;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
 
 @Entity
 public class Type {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String type;
 
 
 
-
+@JsonIgnore
     @ManyToOne
     private UserApplication userApplication;
 

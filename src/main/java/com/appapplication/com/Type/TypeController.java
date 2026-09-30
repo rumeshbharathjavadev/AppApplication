@@ -5,6 +5,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/type/{applicationId}/{userApplicationId}")
 public class TypeController {
@@ -29,5 +31,16 @@ public class TypeController {
             return new ResponseEntity<>("Save Failed", HttpStatus.BAD_REQUEST);
         }
 
+    }
+
+
+    @GetMapping("/getAllType")
+    public ResponseEntity<List<Type>> getAllType(){
+        return new ResponseEntity<>(typeService.getAllType(),HttpStatus.OK);
+    }
+
+    @GetMapping("/getType/{usertypeId}")
+    public ResponseEntity<List<Type>> getType(@PathVariable Long applicationId, @PathVariable Long userApplicationId,@PathVariable Long usertypeId ){
+        return new ResponseEntity<>(typeService.getType(applicationId,userApplicationId,usertypeId),HttpStatus.OK);
     }
 }
