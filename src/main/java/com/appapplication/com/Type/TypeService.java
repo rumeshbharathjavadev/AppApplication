@@ -10,4 +10,8 @@ public interface TypeService {
     List<Type> getAllType();
 
     List<Type> getType(Long applicationId, Long userApplicationId, Long usertypeId);
+
+    boolean updateType(Long applicationId, Long userApplicationId, Long usertypeId, Type type);
+
+    boolean deleteType(Long applicationId, Long userApplicationId, Long usertypeId);
 }

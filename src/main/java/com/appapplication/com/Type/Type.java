@@ -13,9 +13,7 @@ public class Type {
     private Long id;
     private String type;
 
-
-
-@JsonIgnore
+    @JsonIgnore
     @ManyToOne
     private UserApplication userApplication;
 

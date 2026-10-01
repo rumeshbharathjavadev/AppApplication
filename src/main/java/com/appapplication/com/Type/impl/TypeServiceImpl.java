@@ -24,17 +24,7 @@ private TypeRepository typeRepository;
         this.typeRepository = typeRepository;
     }
 
-    @Override
-    public boolean addType(Long applicationId, Long userApplicationId, Type type) {
-        UserApplication userApplication=userApplicationService.getUserId(applicationId,userApplicationId);
-       if (userApplication!=null) {
-           type.setUserApplication(userApplication);
-           typeRepository.save(type);
-           return true;
-       }else{
-           return false;
-       }
-    }
+
 
     @Override
     public List<Type> getAllType() {
@@ -45,13 +35,46 @@ private TypeRepository typeRepository;
     public List<Type> getType(Long applicationId, Long userApplicationId, Long usertypeId) {
         UserApplication userApplication=userApplicationService.getUserId(applicationId,userApplicationId);
         if (userApplication!=null) {
-            Optional<Type> alltype=typeRepository.findById(usertypeId);
+            Optional<Type> type=typeRepository.findById(usertypeId);
         }
-
         return null;
     }
 
+    @Override
+    public boolean addType(Long applicationId, Long userApplicationId, Type type) {
+        UserApplication userApplication=userApplicationService.getUserId(applicationId,userApplicationId);
+        if (userApplication!=null) {
+            type.setUserApplication(userApplication);
+            typeRepository.save(type);
+            return true;
+        }else{
+            return false;
+        }
+    }
 
+    @Override
+    public boolean updateType(Long applicationId, Long userApplicationId, Long usertypeId, Type type) {
+        UserApplication userApplication=userApplicationService.getUserId(applicationId,userApplicationId);
+        if (userApplication!=null) {
+            Optional<Type> updateType=typeRepository.findById(usertypeId);
+            updateType.get().setType(type.getType());
+            typeRepository.save(updateType.get());
+            return true;
+        }else {
+            return false;
+        }
+    }
+
+    @Override
+    public boolean deleteType(Long applicationId, Long userApplicationId, Long usertypeId) {
+        UserApplication userApplication=userApplicationService.getUserId(applicationId,userApplicationId);
+        if (userApplication!=null) {
+            typeRepository.deleteById(usertypeId);
+            return true;
+        }else  {
+            return false;
+        }
+    }
 
 
 }
